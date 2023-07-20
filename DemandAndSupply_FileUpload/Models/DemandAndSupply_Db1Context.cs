@@ -21,14 +21,15 @@ namespace DemandAndSupply_FileUpload.Models
         public virtual DbSet<DemandSupplyTbl1> DemandSupplyTbl1s { get; set; }
         public virtual DbSet<DemandSupplyTbl2> DemandSupplyTbl2s { get; set; }
         public virtual DbSet<DemandSupplyTbl3> DemandSupplyTbl3s { get; set; }
+        public virtual DbSet<LoginRegistration> LoginRegistrations { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            /*if (!optionsBuilder.IsConfigured)
+            if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+
                 optionsBuilder.UseSqlServer("Data Source=LIN22006027\\SQLEXPRESS; Initial Catalog=DemandAndSupply_Db1; Integrated Security=true;");
-            }*/
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -529,6 +530,23 @@ namespace DemandAndSupply_FileUpload.Models
                 entity.Property(e => e.S2rmanaged).HasColumnName("S2RManaged");
 
                 entity.Property(e => e.SellingBu).HasColumnName("SellingBU");
+            });
+
+            modelBuilder.Entity<LoginRegistration>(entity =>
+            {
+                entity.ToTable("LoginRegistration");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Email).IsRequired();
+
+                entity.Property(e => e.FirstName).IsRequired();
+
+                entity.Property(e => e.LastName).IsRequired();
+
+                entity.Property(e => e.Password).IsRequired();
+
+                entity.Property(e => e.Role).IsRequired();
             });
 
             OnModelCreatingPartial(modelBuilder);

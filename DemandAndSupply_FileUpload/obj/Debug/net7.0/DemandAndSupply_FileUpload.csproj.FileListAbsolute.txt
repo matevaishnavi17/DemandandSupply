@@ -29,7 +29,6 @@ C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Deb
 C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -77,3 +76,7 @@ C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\obj\Deb
 C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\obj\Debug\net7.0\DemandAndSupply_FileUpload.pdb
 C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\obj\Debug\net7.0\DemandAndSupply_FileUpload.genruntimeconfig.cache
 C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\obj\Debug\net7.0\ref\DemandAndSupply_FileUpload.dll
+C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\AutoMapper.Collection.dll
+C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\AAHIWALE\Documents\Demand and Supply\DemandAndSupply_FileUpload\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -31,6 +31,27 @@ namespace DemandAndSupply_FileUpload.Controllers
         {
             return BadRequest("Please select a file to upload.");
         }
+
+         // Validate file size
+        const long maxSize = 20 * 1024 * 1024; // 10MB
+        if (file.Length > maxSize)
+        {
+            return BadRequest("File size exceeds the maximum limit of 20MB.");
+        }
+
+        // Validate file type
+        string[] allowedType = { "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",// XLSX
+        "application/vnd.ms-excel",//xls
+        "text/csv",//csv
+        "application/vnd.ms-excel.sheet.binary.macroenabled.12" //xlsb
+        };
+
+    
+        if (!allowedType.Contains(file.ContentType))
+        {
+            return BadRequest("Invalid file type. Only xls, xlsx, and xlsb files are allowed.");
+        }
+
         //DateTime dateTime;
         using (var package = new ExcelPackage(file.OpenReadStream()))
         {
@@ -64,7 +85,7 @@ namespace DemandAndSupply_FileUpload.Controllers
                     BackFillReason = worksheet.Cells[row, 19].Value?.ToString(),
                     OutgoingEmployee = worksheet.Cells[row, 20].Value?.ToString(),
                     //RoleEndDate=DateTime.TryParseExact(worksheet.Cells[row, 21].Value,"yyyyMMdd",CultureInfo.InvariantCulture,System.Globalization.DateTimeStyles.None,out dateTime),
-                    // RoleStartDate = Convert.ToDateTime(worksheet.Cells[row, 21].Value),
+                    //RoleStartDate = Convert.ToDateTime(worksheet.Cells[row, 21].Value),
                     //RoleEndDate = Convert.ToDateTime(worksheet.Cells[row, 22].Value),
                      RoleStartDate = worksheet.Cells[row, 21].Value?.ToString(),
                      RoleEndDate = worksheet.Cells[row, 22].Value?.ToString(),
@@ -131,6 +152,7 @@ namespace DemandAndSupply_FileUpload.Controllers
                     //ThorCloseDate= DateTime.FromOADate((double)worksheet.Cells[row, 80].Value?),
                     //ThorCloseDate= Convert.ToDateTime(worksheet.Cells[row,80].Value),
                     //ThorStartDate = Convert.ToDateTime(worksheet.Cells[row, 81].Value), 
+                    
                     ThorCloseDate= worksheet.Cells[row,80].Value?.ToString(),
                     ThorStartDate = worksheet.Cells[row, 81].Value?.ToString(),
                     MarketUnitBu = worksheet.Cells[row, 82].Value?.ToString(),
